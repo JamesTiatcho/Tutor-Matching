@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_socketio import SocketIO, emit
 import sqlite3
 import datetime
 import socketio
+import re
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a strong, unique key
@@ -74,7 +75,7 @@ def init_db():
 
 @app.route('/')
 def index():
-    return render_template('start.html')
+    return render_template('index.html')
 
 @app.route('/home')
 def home():
@@ -251,7 +252,7 @@ def login():
                     session['firstname'] = user[0]
                     return redirect(url_for('home'))
         error = 'Invalid username or password'
-    return render_template('start.html', error=error)
+    return render_template('index.html', error=error)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -261,9 +262,14 @@ def signup():
         username = request.form['newusername']
         password = request.form['newpassword']
         repassword = request.form['repassword']
+
+        if not firstname.isalpha():
+            flash("Firstname must contain letters only!", "error")
+            return redirect(url_for('signup'))  # Redirect to the same signup page
         
         if password != repassword:
-            return "Passwords do not match!"
+            flash("Passwords do not match!", "error")
+            return redirect(url_for('signup'))
         
         table = 'Tutor' if username.isdigit() else 'Student'
         
@@ -368,29 +374,23 @@ def enroll_with_tutor():
         with sqlite3.connect('users.db') as conn:
             cursor = conn.cursor()
 
-            # Get the student ID
             cursor.execute('SELECT id, firstname || " " || lastname FROM Student WHERE username = ?', (student_username,))
             student_row = cursor.fetchone()
             student_id = student_row[0] if student_row else None
 
-            # Get the tutor ID
             cursor.execute('SELECT id FROM Tutor WHERE firstname || " " || lastname = ?', (tutor_name,))
             tutor_row = cursor.fetchone()
             tutor_id = tutor_row[0] if tutor_row else None
 
             if student_id and tutor_id:
-                # Check if the student is already enrolled with the tutor
                 cursor.execute('SELECT * FROM Enrollment WHERE student_id = ? AND tutor_id = ?', (student_id, tutor_id))
                 enrollment_exists = cursor.fetchone()
 
                 if enrollment_exists:
-                    # Enrollment already exists
                     return render_template('enrollment_error.html', message=f"You are already enrolled with {tutor_name} for {subject}.")
 
-                # Insert new enrollment
                 cursor.execute('''INSERT INTO Enrollment (student_id, tutor_id, subject) VALUES (?, ?, ?)''', (student_id, tutor_id, subject))
                 
-                # Insert notification
                 cursor.execute('''INSERT INTO Notifications (tutor_id, student_name, subject) VALUES (?, ?, ?)''', (tutor_id, student_row[1], subject))
                 
                 conn.commit()
@@ -412,11 +412,8 @@ def tutor_inbox():
         if tutor:
             tutor_id, firstname, lastname, username = tutor
 
-            # Fetch notifications
             cursor.execute('SELECT student_name, subject, timestamp FROM Notifications WHERE tutor_id = ?', (tutor_id,))
             notifications = cursor.fetchall()
-
-            # Count notifications
             notifications_count = len(notifications)
         else:
             notifications = []
@@ -441,12 +438,9 @@ def submit_assessment():
     subject = request.form['subject']
     answers = request.form['answers']
 
-    # Here you can process the assessment, save it to a database, or perform any other logic.
-    # For simplicity, we are just printing the received data to the console.
     print(f"Assessment received for subject: {subject}")
     print(f"User provided the following information: {answers}")
 
-    # After processing, redirect to a confirmation page or back to home
     return redirect(url_for('home'))
 
 @app.route('/logout', methods=['POST'])
@@ -454,6 +448,5 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
-    init_db()
-    socketio.run(app, debug=True)
+if __name__ == "__main__":
+    socketio.run(app, host="0.0.0.0", port=5000)

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bright Tutorial</title>
+<link rel="icon" href="{{ url_for('static', filename='tutor.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color: #e9e9d8;
+        font-family: 'Poppins';
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 60px;
+        filter: brightness(0.6);
+        object-fit: cover;
+    }
+    .logo {
+        position: absolute;
+        top: 0px;
+        left: 70px;
+        width: 60px;
+        height: 60px;
+        z-index: 10;
+    }
+    .text {
+        position: absolute;
+        top: 15px;
+        left: 140px;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        z-index: 10;
+        font-weight: bold;
+    }
+    .text1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 60px;
+        z-index: 10;
+        text-align: center;
+        font-weight: bold;
+    }
+    .highlight {
+        color: #f7e785;
+    }
+    .text2 {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+        text-align: center;
+    }
+    .click {
+        position: relative;
+        left: 1060px;
+        top: 15px;
+        background-color: #3d8236;
+        width: 115px;
+        height: 25px;
+        font-weight: bold;
+        margin: 0 5px;
+        border-radius: 20px;
+        color: #e9e9d8;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .logo2 {
+        display: block;
+        margin: 0 auto 20px auto;
+        margin-left: 95px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 60px;
+        height: 60px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 20;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    .modal-content {
+        background-color: #f9f9d1;
+        margin: 0% auto;
+        margin-top: 10px;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        max-width: 250px;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .modal-content h1 {
+        font-size: 15px;
+        text-align: left;
+        margin-left: 20px;
+        font-family: 'poppins';
+        font-weight: normal;
+    }
+    .modal-content h2 {
+        font-size: 24px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .modal-content input[type="text"],
+    .modal-content input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        display: inline-block;
+        border: 1px solid #fbfbe3;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .modal-content input.error {
+        border-color: red;
+    }
+    .modal-content button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        width: 40%;
+        border-radius: 15px;
+    }
+    .modal-content button[type="submit"]:hover {
+        background-color: #768d77;
+    }
+    .forgot-password {
+        display: block;
+        margin-top: 5px;
+        color: #000000;
+        text-decoration: none;
+        font-size: 10px;
+        margin-left: 120px;
+    }
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='tutor.png') }}" class="logo">
+    <div class="text">BRIGHT TUTORIAL LEARNING CENTER</div>
+    <button class="click" onclick="openModal('loginModal')">LOG IN</button>
+    <button class="click" onclick="openModal('signupModal')">SIGN UP</button>
+    <div class="text1">A way towards <span class="highlight">BRIGHT</span><br>future.</div>
+    <div class="text2">A PLACE FOR CHILDREN TO GROW AND DEVELOP</div>
+
+    <div class="img">
+        <img src="{{ url_for('static', filename='10.jpg') }}" alt="Tutorial Image">
+    </div>
+
+    <!-- Log In Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <img src="{{ url_for('static', filename='tutor.png') }}" class="logo2">
+            <h2>LOG IN</h2>
+            <form action="{{ url_for('login') }}" method="post">
+                {% if error %}
+                    <div class="error-message">{{ error }}</div>
+                {% endif %}
+                <label for="username"><h1>Username</h1></label>
+                <input type="text" id="username" name="username" class="{% if error %}error{% endif %}" required>
+                <label for="password"><h1>Password</h1></label>
+                <input type="password" id="password" name="password" class="{% if error %}error{% endif %}" required>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <img src="{{ url_for('static', filename='tutor.png') }}" class="logo2">
+            <h2>Sign up</h2>
+            
+            <form action="{{ url_for('signup') }}" method="post" onsubmit="return validateForm()">
+                <label for="firstname"><h1>Firstname</h1></label>
+                <input type="text" id="firstname" name="firstname" required>
+                <label for="lastname"><h1>Lastname</h1></label>
+                <input type="text" id="lastname" name="lastname" required>
+                <label for="newusername"><h1>Username</h1></label>
+                <input type="text" id="newusername" name="newusername" required>
+                <label for="newpassword"><h1>Password</h1></label>
+                <input type="password" id="newpassword" name="newpassword" required>
+                <label for="repassword"><h1>Re-enter Password</h1></label>
+                <input type="password" id="repassword" name="repassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+function validateForm() {
+        const firstname = document.getElementById('firstname').value;
+        const firstnameField = document.getElementById('firstname');
+
+        // Regular expression to check if the username contains only letters
+        const letterRegex = /^[a-zA-Z]+$/;
+
+        // Check if the username is valid
+        if (!letterRegex.test(firstname)) {
+            // Change the border color to red
+            firstnameField.style.borderColor = "red";
+            // Alert the user
+            alert("Firstname should contain letters only.");
+            return false; // Prevent form submission
+        } else {
+            // Reset the border color if valid
+            firstnameField.style.borderColor = "";
+            return true; // Allow form submission
+        }
+    }
+        // Function to open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            var loginModal = document.getElementById('loginModal');
+            var signupModal = document.getElementById('signupModal');
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            if (event.target == signupModal) {
+                signupModal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -289,7 +289,7 @@
         <form id="quiz-form" onsubmit="checkAnswers(event)">
             <div id="quiz-container">
                 <!-- English Section -->
-                <div id="english-section" class="quiz-section" style="display: none;">
+                <div id="english-section-grade-1" class="quiz-section" style="display: none;">
                     <h2>English</h2>
                     <!-- English Questions -->
                     <div class="quiz-question grade-1">
@@ -356,11 +356,11 @@
                             <input type="radio" name="q5" value="C"> C. May I go outside?
                         </label><br>
                     </div>
-                    <button type="button" onclick="showFilipinoSection()">Next</button>
+                    <button type="button" onclick="showFilipinoSectionGrade1()">Next</button>
                 </div>
 
                 <!-- Filipino Section -->
-                <div id="filipino-section" class="quiz-section" style="display: none;">
+                <div id="filipino-section-grade-1" class="quiz-section" style="display: none;">
                     <h2>Filipino</h2>
                     <p>I. Piliin ang salitang OO kung nagsasaad ng pagsang-ayon at HINDI kung nagsasaad ng hindi pag-sangayon</p>
                     <!-- Filipino Questions -->
@@ -409,39 +409,39 @@
                         </label><br>
                     </div>
 
-                    <button type="button" onclick="showMathSection()">Next</button>
-                    <button type="button" onclick="showEnglishSection()">Back</button>
+                    <button type="button" onclick="showMathSectionGrade1()">Next</button>
+                    <button type="button" onclick="showEnglishSectionGrade1()">Back</button>
                 </div>
 
                 <!-- Math Section for Grade 1 -->
-                <div id="math-section" class="quiz-section" style="display: none;">
-                    <h2>Math</h2>
+                <div id="math-section-grade-1" class="quiz-section" style="display: none;">
+                    <h2>Mathematics</h2>
                     <!-- Math Questions for Grade 1 -->
                     <div class="quiz-question grade-1">
-                        <p>1. ILAGAY ANG TAMAN BILANG SA BAWAT LARAWAN</p>
+                        <p>1. How many apples are in the picture?</p>
                         <img src="{{ url_for('static', filename='apple.png') }}" alt="Addition Problem Image" style="width: 250px; height: auto;"><br>
                         <label>
-                            <input type="radio" name="q11" value="A"> A. Pito
+                            <input type="radio" name="q11" value="A"> A. Seven
                         </label><br>
                         <label>
-                            <input type="radio" name="q11" value="B"> B. Lima
+                            <input type="radio" name="q11" value="B"> B. Five
                         </label><br>
                         <label>
-                            <input type="radio" name="q11" value="C"> C. Tatlo
+                            <input type="radio" name="q11" value="C"> C. Three
                         </label><br>
                     </div>
                 
                     <div class="quiz-question grade-1">
-                        <p>2. ILAGAY ANG TAMAN BILANG SA BAWAT LARAWAN</p>
+                        <p>2. How many cherries are in the picture?</p>
                         <img src="{{ url_for('static', filename='cherry.png') }}" alt="Subtraction Problem Image" style="width: 250px; height: auto;"><br>
                         <label>
-                            <input type="radio" name="q12" value="A"> A. Tatlo
+                            <input type="radio" name="q12" value="A"> A. Three
                         </label><br>
                         <label>
-                            <input type="radio" name="q12" value="B"> B. Walo
+                            <input type="radio" name="q12" value="B"> B. Eight
                         </label><br>
                         <label>
-                            <input type="radio" name="q12" value="C"> C. Dalawa
+                            <input type="radio" name="q12" value="C"> C. Two
                         </label><br>
                     </div>
                 
@@ -484,40 +484,40 @@
                         </label><br>
                     </div>
 
-                    <button type="button" onclick="showScienceSection()">Next</button>
-                    <button type="button" onclick="showFilipinoSection()">Back</button>
+                    <button type="button" onclick="showScienceSectionGrade1()">Next</button>
+                    <button type="button" onclick="showFilipinoSectionGrade1()">Back</button>
                 </div>
 
                 <!-- Science Fill in the Blanks Section for Grade 1 -->
-                <div id="science-section" class="quiz-section" style="display: none;">
+                <div id="science-section-grade-1" class="quiz-section" style="display: none;">
                     <h2>Science</h2>
-                    <p>Fill in the blanks:</p>
+                    <p>Choose the correct word from the box to complete each sentence.</p>
                     
                     <!-- Word choices in a box -->
                     <div style="border: 1px solid #000; padding: 10px; text-align: center; margin: 0 auto 20px auto; width: 50%;">
                         <strong>tongue</strong> &nbsp; <strong>eyes</strong> &nbsp; <strong>ear</strong> &nbsp; <strong>mouth</strong> &nbsp; <strong>hands</strong> 
-                    </div>                    
+                    </div> 
 
                     <!-- Science Fill in the Blank Questions -->
                     <div class="quiz-question grade-1">
                         <label>
-                        <p>1. Deomark use his <input type="text" name="q16" placeholder="Type your answer here"> to see</p>
+                        <p>1. Deomark use his <input type="text" name="q16" placeholder="Type your answer here"> to see.</p>
                         </label><br>
                         <label>
-                        <p>2. We use our <input type="text" name="q17" placeholder="Type your answer here"> to hold and pick up things</p>
+                        <p>2. We use our <input type="text" name="q17" placeholder="Type your answer here"> to hold and pick up things.</p>
                         </label><br>
                         <label>
                         <p>3. The part of our body that helps us hear is the <input type="text" name="q18" placeholder="Type your answer here"> .</p>
                         </label><br>
                         <label>
-                        <p>4. Appa uses his <input type="text" name="q19" placeholder="Type your answer here"> to taste food that his mother cooked</p>
+                        <p>4. Appa uses his <input type="text" name="q19" placeholder="Type your answer here"> to taste food that his mother cooked.</p>
                         </label><br>
                         <label>
                         <p>5. Yan kiss her mother using <input type="text" name="q20" placeholder="Type your answer here">.</p>
                         </label>
                     </div>
 
-                    <button type="button" onclick="showMathSection()">Back</button>
+                    <button type="button" onclick="showMathSectionGrade1()">Back</button>
                     <input type="submit" value="Submit">
 
                 </div>
@@ -529,24 +529,25 @@
                     <p>Instruction: Tell whether the group of words is a sentence or not. Write YES if it is a sentence and NO if it is not.</p>
                     <div class="quiz-question grade-2">
                         <label>
-                            <p><input type="text" name="q21" placeholder="" style="width: 80px;"> 1. he helps the old man</p>
+                            <p><input type="text" name="q21" placeholder="" style="width: 80px;"> 1. He helps the old man</p>
                         </label><br>
                         <label>
-                            <p><input type="text" name="q22" placeholder="" style="width: 80px;"> 2. old man gives</p>
+                            <p><input type="text" name="q22" placeholder="" style="width: 80px;"> 2. Old man gives</p>
                         </label><br>
                         <label>
-                            <p><input type="text" name="q23" placeholder="" style="width: 80px;"> 3. aside from the pancit, the old man helps the boy earn more money</p>
+                            <p><input type="text" name="q23" placeholder="" style="width: 80px;"> 3. Aside from the pancit, the old man helps the boy earn more money</p>
                         </label><br>
                         <label>
-                            <p><input type="text" name="q24" placeholder="" style="width: 80px;"> 4. kind people get a greater reward</p>
+                            <p><input type="text" name="q24" placeholder="" style="width: 80px;"> 4. Kind people get a greater reward</p>
                         </label><br>
                         <label>
-                            <p><input type="text" name="q25" placeholder="" style="width: 80px;"> 5. his friends</p>
+                            <p><input type="text" name="q25" placeholder="" style="width: 80px;"> 5. His friends</p>
                         </label><br>
                     </div>
                     <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade2()">Next</button>
                 </div>
                 
+                <!-- Filipino Section for Grade 2 -->
                 <div id="filipino-section-grade-2" class="quiz-section" style="display: none;">
                     <h2>Filipino</h2>
                     <!-- Filipino Questions -->
@@ -568,9 +569,9 @@
                     <div class="quiz-question grade-2">
                         <p>3. Ilang pantig mayroon ang salitang alimango?</p>
                         <label><input type="radio" name="q28" value="A"> A. 1   </label><br>
-                        <label><input type="radio" name="q28" value="B"> B. 2  </label><br>
+                        <label><input type="radio" name="q28" value="B"> B. 2   </label><br>
                         <label><input type="radio" name="q28" value="C"> C. 3   </label><br>
-                        <label><input type="radio" name="q28" value="D"> D. 4</label><br>
+                        <label><input type="radio" name="q28" value="D"> D. 4   </label><br>
                     </div>
                 
                     <div class="quiz-question grade-2">
@@ -593,35 +594,36 @@
                     <button type="button" class="bnbutton" onclick="showEnglishSectionGrade2()">Back</button>
                 </div>
 
+                <!-- Math Section for Grade 2 -->
                 <div id="math-section-grade-2" class="quiz-section" style="display: none;">
-                <h2>Math</h2>
-                <p>Panuto: Piliin ang tamang sagot.</p>
+                <h2>Mathematics</h2>
+                <p>Instruction: Read and analyze each question. Choose the correct answer from the choices given.</p>
                 <div class="quiz-question grade-2">
-                    <p>1. Ako ay numero bago mag 1000. Sino ako?</p>
+                    <p>1. I am a number before 1000. Who am I?</p>
                     <label><input type="radio" name="q31" value="A"> A. 1200</label><br>
                     <label><input type="radio" name="q31" value="B"> B. 1100</label><br>
                     <label><input type="radio" name="q31" value="C"> C. 900</label><br>
                 </div>
                 <div class="quiz-question grade-2">
-                    <p>2. Anong numero ang bago mag 200.</p>
+                    <p>2. What number is before 200?</p>
                     <label><input type="radio" name="q32" value="A"> A. 100</label><br>
                     <label><input type="radio" name="q32" value="B"> B. 300</label><br>
                     <label><input type="radio" name="q32" value="C"> C. 500</label><br>
                 </div>
                 <div class="quiz-question grade-2">
-                    <p>3. Anong numero ang bago mag 600?</p>
+                    <p>3. What number is before 600?</p>
                     <label><input type="radio" name="q33" value="A"> A. 400</label><br>
                     <label><input type="radio" name="q33" value="B"> B. 500</label><br>
                     <label><input type="radio" name="q33" value="C"> c. 700</label><br>
                 </div>
                 <div class="quiz-question grade-2">
-                    <p>4. Anong numero ang nasa pagitan ng 600 at 800?</p>
+                    <p>4. What number is in between 600 and 800?</p>
                     <label><input type="radio" name="q34" value="A"> A. 500</label><br>
                     <label><input type="radio" name="q34" value="B"> B. 700</label><br>
                     <label><input type="radio" name="q34" value="C"> c. 900</label><br>
                 </div>
                 <div class="quiz-question grade-2">
-                    <p>5. Anong numero ang pagkatapos ng 800?</p>
+                    <p>5. What number comes after 800?</p>
                     <label><input type="radio" name="q35" value="A"> A. 900</label><br>
                     <label><input type="radio" name="q35" value="B"> B. 700</label><br>
                     <label><input type="radio" name="q35" value="C"> c. 1000</label><br>
@@ -633,7 +635,7 @@
 
                 <div id="science-section-grade-2" class="quiz-section" style="display: none;">
                     <h2>Science</h2>
-                    <p>Instructions: Choose the correct answer.</p>
+                    <p>Instruction: Read and analyze each question. Choose the correct answer from the choices given.</p>
                     
                     <div class="quiz-question grade-2">
                         <p>1. What do you call animals that have fur?</p>
@@ -673,8 +675,702 @@
                     <button type="button" class="bnbutton" onclick="showMathSectionGrade2()">Back</button>
                     <input type="submit" value="Submit">
                 </div>
+
+
+                <!-- English Fill in the Blanks Section for Grade 3 -->
+                <div id="english-section-grade-3" class="quiz-section" style="display: none;">
+                    <h2>English</h2>
+                    <p>Choose the correct word from the box to complete each sentence.</p>
+                    
+                    <!-- Word choices in a box -->
+                    <div style="border: 1px solid #000; padding: 10px; text-align: center; margin: 0 auto 20px auto; width: 50%;">
+                        <strong>backyard</strong> &nbsp; <strong>excited</strong> &nbsp; <strong>chocolate</strong> &nbsp; <strong>friends</strong> &nbsp; <strong>notebook</strong> 
+                    </div> 
+
+                    <!-- English Fill in the Blank Questions -->
+                    <div class="quiz-question grade-3">
+                        <label>
+                        <p>1. It’s Ana’s birthday. She is  <input type="text" name="q41" placeholder="Type your answer here"> !</p>
+                        </label><br>
+                        <label>
+                        <p>2. She invited her <input type="text" name="q42" placeholder="Type your answer here"> to the birthday party.</p>
+                        </label><br>
+                        <label>
+                        <p>3. The party will be held in the <input type="text" name="q43" placeholder="Type your answer here"> .</p>
+                        </label><br>
+                        <label>
+                        <p>4. Mother gave a <input type="text" name="q44" placeholder="Type your answer here"> to Ana as her gift so she can
+                            write her daily activities on it. </p>
+                        </label><br>
+                        <label>
+                        <p>5. For her birthday cake, Ana chose a <input type="text" name="q45" placeholder="Type your answer here"> flavor.</p>
+                        </label>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade3()">Next</button>
+
+                </div>
+
+                <!-- Filipino Section for Grade 3 -->
+                <div id="filipino-section-grade-3" class="quiz-section" style="display: none;">
+                    <h2>Filipino</h2>
+                    <p> Panuto: Basahin ang mga sumusunod na tanong. Piliin ang titik ng tamang sagot.</p>
+                    <!-- Filipino Questions for Grade 3 -->
+                    <div class="quiz-question grade-3">
+                        <p>1. Ano ang tawag sa mga salitang naglalarawan?</p><br>
+                        <label><input type="radio" name="q46" value="A"> A. Pang-uri</label><br>
+                        <label><input type="radio" name="q46" value="B"> B. Pandiwa</label><br>
+                        <label><input type="radio" name="q46" value="C"> C. Panghalip</label><br>
+                    </div>
+                    <div class="quiz-question grade-3">
+                        <p>2. Matangkad si Ethel.” Ang salitang 'matangkad' ay halimbawa ng:</p><br>
+                        <label><input type="radio" name="q47" value="A"> A. Sukat</label><br>
+                        <label><input type="radio" name="q47" value="B"> B. Bilang</label><br>
+                        <label><input type="radio" name="q47" value="C"> C. Hugis</label><br>
+                    </div>
+                <div class="quiz-question grade-3">
+                    <p>3. Sa anong bantas nagtatapos ang tanong?</p><br>
+                    <label><input type="radio" name="q48" value="A"> A. Tandang pananong</label><br>
+                    <label><input type="radio" name="q48" value="B"> B. Kuwit</label><br>
+                    <label><input type="radio" name="q48" value="C"> C. Tuldok</label><br>
+                </div>
+                <div class="quiz-question grade-3">
+                    <p>4. Ano ang tawag sa mga salitang pareho ang tunog sa hulihan?</p><br>
+                    <label><input type="radio" name="q49" value="A"> A. Baybay</label><br>
+                    <label><input type="radio" name="q49" value="B"> B. Magkatugma</label><br>
+                    <label><input type="radio" name="q49" value="C"> C. Patula</label><br>
+                </div>
+                <div class="quiz-question grade-3">
+                    <p>5. Ang tanong na nagsisimula sa saan ay nagtatanong tungkol sa?</p><br>
+                    <label><input type="radio" name="q50" value="A"> A. Tao</label><br>
+                    <label><input type="radio" name="q50" value="B"> B. Bagay</label><br>
+                    <label><input type="radio" name="q50" value="C"> C. Lugar</label><br>
+                </div>
+                
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade3()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showEnglishSectionGrade3()">Back</button>
+                
+                </div>
+                
+                <!-- Math Section for Grade 3 -->
+                <div id="math-section-grade-3" class="quiz-section" style="display: none;">
+                    <h2>Mathematics</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Math Questions for Grade 3 -->
+                    <div class="quiz-question grade-3">
+                        <p>1. A handkerchief measures 25 cm on all sides. What is its area?</p><br>
+                        <label><input type="radio" name="q51" value="A"> A. 625 sq. cm </label><br>
+                        <label><input type="radio" name="q51" value="B"> B. 725 sq. cm </label><br>
+                        <label><input type="radio" name="q51" value="C"> C. 825 sq. cm </label><br>
+                        <label><input type="radio" name="q51" value="D"> D. 925 sq.cm </label><br>
+                    </div>
+                    <div class="quiz-question grade-3">
+                        <p>2. The swimming pool is 12 meters long and 8 meters wide. Find its area.</p><br>
+                        <label><input type="radio" name="q52" value="A"> A. 66 sq.m </label><br>
+                        <label><input type="radio" name="q52" value="B"> B. 76 sq.m </label><br>
+                        <label><input type="radio" name="q52" value="C"> C. 86 sq.m</label><br>
+                        <label><input type="radio" name="q52" value="D"> D. 96 sq. m</label><br>
+                    </div>
+                    <div class="quiz-question grade-3">
+                        <p>3. Rico made a chopping board with an area of 600 sq.cm. If the length is 30cm find its width.</p><br>
+                        <label><input type="radio" name="q53" value="A"> A. 10 cm </label><br>
+                        <label><input type="radio" name="q53" value="B"> B. 20 cm </label><br>
+                        <label><input type="radio" name="q53" value="C"> C. 30 cm </label><br>
+                        <label><input type="radio" name="q53" value="D"> D. 40 cm </label><br>
+                    </div>
+                    <div class="quiz-question grade-3">
+                        <p>4. The municipal plaza has an area of 1000 sq.m. If the width is 25 meters. Find its length.</p><br>
+                        <label><input type="radio" name="q54" value="A"> A. 40 m </label><br>
+                        <label><input type="radio" name="q54" value="B"> B. 50 m </label><br>
+                        <label><input type="radio" name="q54" value="C"> C. 60 m </label><br>
+                        <label><input type="radio" name="q54" value="D"> D. 70 m </label><br>
+                    </div>
+                    <div class="quiz-question grade-3">
+                        <p>5. A square mirror is 30 cm on all sides. Find its area.</p><br>
+                        <label><input type="radio" name="q55" value="A"> A. 9 sq. cm </label><br>
+                        <label><input type="radio" name="q55" value="B"> B. 90 sq. cm </label><br>
+                        <label><input type="radio" name="q55" value="C"> C. 900 sq. cm </label><br>
+                        <label><input type="radio" name="q55" value="D"> D. 9000 sq.cm </label><br>
+                    </div>
+                
+                    <button type="button" class="bnbutton" onclick="showScienceSectionGrade3()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade3()">Back</button>
+                </div>
+
+                <!-- Science Fill in the Blanks Section for Grade 3 -->
+                <div id="science-section-grade-3" class="quiz-section" style="display: none;">
+                    <h2>Science</h2>
+                    <p>Choose the correct word from the box to complete each sentence.</p>
+                    
+                    <!-- Word choices in a box -->
+                    <div style="border: 1px solid #000; padding: 10px; text-align: center; margin: 0 auto 20px auto; width: 50%;">
+                        <strong>flying</strong> &nbsp; <strong>swam</strong> &nbsp; <strong>hopped</strong> &nbsp; <strong>scratching</strong> &nbsp; <strong>breathe</strong> 
+                    </div> 
+
+                    <!-- Science Fill in the Blank Questions -->
+                    <div class="quiz-question grade-3">
+                        <label>
+                        <p>1. The cat used its sharp claws for <input type="text" name="q56" placeholder="Type your answer here">.</p>
+                        </label><br>
+                        <label>
+                        <p>2. Fish <input type="text" name="q57" placeholder="Type your answer here"> underwater through their gills, allowing them to survive in the ocean.</p>
+                        </label><br>
+                        <label>
+                        <p>3. The dolphin <input type="text" name="q58" placeholder="Type your answer here"> gracefully, using its fins to navigate through the water.</p>
+                        </label><br>
+                        <label>
+                        <p>4. The bird spread its wings wide before <input type="text" name="q59" placeholder="Type your answer here"> into the clear blue sky.</p>
+                        </label><br>
+                        <label>
+                        <p>5. The kangaroo <input type="text" name="q60" placeholder="Type your answer here"> quickly across the field using its powerful hind legs.</p>
+                        </label>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade3()">Back</button>
+                    <input type="submit" value="Submit">
+                </div>
                 
 
+                <!-- English Section for Grade 4 -->
+                <div id="english-section-grade-4" class="quiz-section" style="display: none;">
+                    <h2>English</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- English Questions for Grade 4 -->
+                    <div class="quiz-question grade-4">
+                        <p>1. Ana puts an ice cube in her juice. Anica puts two. Anica’s juice is _____ than Ana’s.</p><br>
+                        <label><input type="radio" name="q61" value="A"> A. cold </label><br>
+                        <label><input type="radio" name="q61" value="B"> B. colder </label><br>
+                        <label><input type="radio" name="q61" value="C"> C. coldest </label><br>
+                        <label><input type="radio" name="q61" value="D"> D. not cold </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 2. Which of the following has a simple subject and a compound predicate?</p><br>
+                        <label><input type="radio" name="q62" value="A"> A. Ben is flying a kite. </label><br>
+                        <label><input type="radio" name="q62" value="B"> B. Ben is running and flying a kite. </label><br>
+                        <label><input type="radio" name="q62" value="C"> C. Ben and Marc are flying their kites. </label><br>
+                        <label><input type="radio" name="q62" value="D"> D. Ben is running and Marc is flying his kite. </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 3. Which of the following compound sentence?</p><br>
+                        <label><input type="radio" name="q63" value="A"> A. Ben is flying a kite. </label><br>
+                        <label><input type="radio" name="q63" value="B"> B. Ben is running and flying a kite. </label><br>
+                        <label><input type="radio" name="q63" value="C"> C. Ben and Marc are flying their kites. </label><br>
+                        <label><input type="radio" name="q63" value="D"> D. Ben is running and Marc is flying his kite. </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 4. Which of the following has a simple subject and a simple predicate?</p><br>
+                        <label><input type="radio" name="q64" value="A"> A. Gina is washing the dishes.</label><br>
+                        <label><input type="radio" name="q64" value="B"> B. Gina and Ana are washing the dishes. </label><br>
+                        <label><input type="radio" name="q64" value="C"> C. Gina is washing the dishes, and Ana is cleaning the kitchen.</label><br>
+                        <label><input type="radio" name="q64" value="D"> D. Gina and Ana are washing the dishes and cleaning the kitchen. </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 5. Which of the following has a compound subject and a simple predicate?</p><br>
+                        <label><input type="radio" name="q65" value="A"> A. Gina is washing the dishes.</label><br>
+                        <label><input type="radio" name="q65" value="B"> B. Gina and Ana are washing the dishes. </label><br>
+                        <label><input type="radio" name="q65" value="C"> C. Gina is washing the dishes, and Ana is cleaning the kitchen.</label><br>
+                        <label><input type="radio" name="q65" value="D"> D. Gina and Ana are washing the dishes and cleaning the kitchen. </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade4()">Next</button>
+                </div>
+
+                <!-- Filipino Section for Grade 4 -->
+                <div id="filipino-section-grade-4" class="quiz-section" style="display: none;">
+                    <h2>Filipino</h2>
+                    <p> Panuto: Basahin ang mga sumusunod na tanong. Piliin ang titik ng tamang sagot.</p>
+                    <!-- Filipino Questions for Grade 4 -->
+                    <div class="quiz-question grade-4">
+                        <p>1. Anong pangungusap ang gagamitin mo sa pag-uutos?</p><br>
+                        <label><input type="radio" name="q66" value="A"> A. Isara ang pinto. </label><br>
+                        <label><input type="radio" name="q66" value="B"> B. Sino ang iyong guro? </label><br>
+                        <label><input type="radio" name="q66" value="C"> C. Yehey! Nanalo kami sa paligsahan. </label><br>
+                        <label><input type="radio" name="q66" value="D"> D. Pakiabot mo nga ang aklat na nasa mesa. </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 2. Sumakit ang kanyang ngipin dahil sa sobrang pagkain ng kendi. Alin ang sanhi?</p><br>
+                        <label><input type="radio" name="q67" value="A"> A. Sumakit ang kanyang ngipin</label><br>
+                        <label><input type="radio" name="q67" value="B"> B. Dahil sa sobrang pagkain ng kendi </label><br>
+                        <label><input type="radio" name="q67" value="C"> C. Sumakit ang kanyang ngipin dahil sa sobra </label><br>
+                        <label><input type="radio" name="q67" value="D"> D. Sumakit ang kanyang ngipin dahil sa sobrang pagkain </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 3. Sapagkat nag-aral si Ben ng kanyang leksiyon, nakapasa siya sa pagsusulit. Alin ang bunga?</p><br>
+                        <label><input type="radio" name="q68" value="A"> A. Nakapasa siya </label><br>
+                        <label><input type="radio" name="q68" value="B"> B. Sapagkat nag-aral si Ben </label><br>
+                        <label><input type="radio" name="q68" value="C"> C. Nakapasa siya sa pagsusulit </label><br>
+                        <label><input type="radio" name="q68" value="D"> D. Sapagkat nag-aral si Ben ng kanyang leksiyon </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 4. Ang mataba __ baboy ay alaga ni Tina. Anong pang-angkop ang dapat ilagay sa patlang?</p><br>
+                        <label><input type="radio" name="q69" value="A"> A. na </label><br>
+                        <label><input type="radio" name="q69" value="B"> B. ng </label><br>
+                        <label><input type="radio" name="q69" value="C"> C. g </label><br>
+                        <label><input type="radio" name="q69" value="D"> D. a </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 5. Si Marife ay matalino _____ tamad mag-aral. Anong pangatnig ang dapat gamitin sa patlang?</p><br>
+                        <label><input type="radio" name="q70" value="A"> A. kung </label><br>
+                        <label><input type="radio" name="q70" value="B"> B. dahil </label><br>
+                        <label><input type="radio" name="q70" value="C"> C. ngunit </label><br>
+                        <label><input type="radio" name="q70" value="D"> D. sapagkat </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade4()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showEnglishSectionGrade4()">Back</button>
+                </div>
+
+                <!-- Mathematics Section for Grade 4 -->
+                <div id="math-section-grade-4" class="quiz-section" style="display: none;">
+                    <h2>Mathematics</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Mathematics Questions for Grade 4 -->
+                    <div class="quiz-question grade-4">
+                        <p> 1. What is twelve million three hundred seventy-two thousand fifty-six written in figures?</p><br>
+                        <label><input type="radio" name="q71" value="A"> A. 12 372 056 </label><br>
+                        <label><input type="radio" name="q71" value="B"> B. 12 327 056 </label><br>
+                        <label><input type="radio" name="q71" value="C"> C. 12 372 556 </label><br>
+                        <label><input type="radio" name="q71" value="D"> D. 12 327 556 </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 2. What is 8 678 284 rounded to the nearest hundred thousands?</p><br>
+                        <label><input type="radio" name="q72" value="A"> A. 8 6900 000 </label><br>
+                        <label><input type="radio" name="q72" value="B"> B. 8 500 000 </label><br>
+                        <label><input type="radio" name="q72" value="C"> C. 8 700 000 </label><br>
+                        <label><input type="radio" name="q72" value="D"> D. 8 600 000 </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 3. What is the greatest common factor of 72 and 40?</p><br>
+                        <label><input type="radio" name="q73" value="A"> A. 8 </label><br>
+                        <label><input type="radio" name="q73" value="B"> B. 9 </label><br>
+                        <label><input type="radio" name="q73" value="C"> C. 10 </label><br>
+                        <label><input type="radio" name="q73" value="D"> D. 11 </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 4. A number is divisible by 5 if______________.</p><br>
+                        <label><input type="radio" name="q74" value="A"> A. . ones digit is 0 or 5 </label><br>
+                        <label><input type="radio" name="q74" value="B"> B. the number ends with 0 </label><br>
+                        <label><input type="radio" name="q74" value="C"> C. the number ends with 0, 2, 4, 6, 8 </label><br>
+                        <label><input type="radio" name="q74" value="D"> D. ones digit is only 5 </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 5. What is the GCF of 30 and 45?</p><br>
+                        <label><input type="radio" name="q75" value="A"> A. 5 </label><br>
+                        <label><input type="radio" name="q75" value="B"> B. 6 </label><br>
+                        <label><input type="radio" name="q75" value="C"> C. 15 </label><br>
+                        <label><input type="radio" name="q75" value="D"> D. 30 </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showScienceSectionGrade4()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade4()">Back</button>
+                </div>
+
+                <!-- Science Section for Grade 4 -->
+                <div id="science-section-grade-4" class="quiz-section" style="display: none;">
+                    <h2>Science</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Science Questions for Grade 4 -->
+                    <div class="quiz-question grade-4">
+                        <p> 1. Why is water a universal solvent?</p><br>
+                        <p style="text-indent: 50px;"> I. It can dissolve everything.</p>
+                        <p style="text-indent: 50px;"> II. It can dissolve more materials than solvents. </p>
+                        <p style="text-indent: 50px;"> III. It is tasteless and colorless. </p>
+                        <p style="text-indent: 50px;"> IV. It is always available in big amounts. </p>
+                        <label><input type="radio" name="q76" value="A"> A. I and II </label><br>
+                        <label><input type="radio" name="q76" value="B"> B. II and III </label><br>
+                        <label><input type="radio" name="q76" value="C"> C. II and IV </label><br>
+                        <label><input type="radio" name="q76" value="D"> D. I and IV </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 2. What happens with a spoon of dried powder juice when placed in water?</p><br>
+                        <label><input type="radio" name="q77" value="A"> A. It will dissolve </label><br>
+                        <label><input type="radio" name="q77" value="B"> B. It will change in color </label><br>
+                        <label><input type="radio" name="q77" value="C"> C. It will remain the same </label><br>
+                        <label><input type="radio" name="q77" value="D"> D. no changes </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 3. Do all solutes dissolve in all kinds of solvents the same time?</p><br>
+                        <label><input type="radio" name="q78" value="A"> A. yes </label><br>
+                        <label><input type="radio" name="q78" value="B"> B. no </label><br>
+                        <label><input type="radio" name="q78" value="C"> C. sometimes </label><br>
+                        <label><input type="radio" name="q78" value="D"> D. never </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 4. Which of the following dissolves most of the solutes?</p><br>
+                        <label><input type="radio" name="q79" value="A"> A. kerosene </label><br>
+                        <label><input type="radio" name="q79" value="B"> B. alcohol </label><br>
+                        <label><input type="radio" name="q79" value="C"> C. vinegar </label><br>
+                        <label><input type="radio" name="q79" value="D"> D. water </label><br>
+                    </div>
+                    <div class="quiz-question grade-4">
+                        <p> 5. How heat transfer by convection best describe?</p><br>
+                        <label><input type="radio" name="q80" value="A"> A. Heat is transferred because of difference in temperature. </label><br>
+                        <label><input type="radio" name="q80" value="B"> B. Heat is transferred from molecule to molecule by contact. </label><br>
+                        <label><input type="radio" name="q80" value="C"> C. Heat is transferred by a current of freely moving molecules. </label><br>
+                        <label><input type="radio" name="q80" value="D"> D. Statements A and B are both correct. </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade4()">Back</button>
+                    <input type="submit" value="Submit">
+                </div>
+
+                <!-- English Section for Grade 5 -->
+                <div id="english-section-grade-5" class="quiz-section" style="display: none;">
+                    <h2>English</h2>
+                    <p> Test I. Write C before the number of each sentence if the statement is correct and W if it is not.</p>
+                    <!-- English Questions for Grade 5 -->
+                    <div class="quiz-question grade-5">
+                        <label><p><input type="text" name="q81" placeholder="Type your answer here">1. Population is accented on the third syllable.</p></label>
+                        <label><p><input type="text" name="q82" placeholder="Type your answer here">2. The word Chinese is accented on the last syllable and the S is pronounced as Z.</p></label><br>
+                    </div>
+                    <p> Test II. Read and write the letter of your answer as to the mood, tone and purpose suggested by the expression.</p>
+                    <div class="quiz-question grade-5">
+                        <p> 3. What mood or feeling is expressed here?</p><br>
+                        <p style="text-indent: 50px;"> - thick smoke </p>
+                        <p style="text-indent: 50px;"> - red flames </p>
+                        <p style="text-indent: 50px;">  - firemen’s truck arriving </p>
+                        <p style="text-indent: 50px;"> - policemen are carrying bundles </p>
+                        <label><input type="radio" name="q83" value="A"> A. Fear </label><br>
+                        <label><input type="radio" name="q83" value="B"> B. Anger </label><br>
+                        <label><input type="radio" name="q83" value="C"> C. Sadness </label><br>
+                        <label><input type="radio" name="q83" value="D"> D. Anxiety </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 4. What is the mood suggested by these expressions?</p><br>
+                        <p style="text-indent: 50px;"> “Happy landing! Thank God, you are safe!” </p>
+                        <p style="text-indent: 50px;"> People kiss and embrace each other. </p>
+                        <label><input type="radio" name="q84" value="A"> A. Gratitude </label><br>
+                        <label><input type="radio" name="q84" value="B"> B. Rejoicing </label><br>
+                        <label><input type="radio" name="q84" value="C"> C. Fondness </label><br>
+                        <label><input type="radio" name="q84" value="D"> D. Fun </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 5. What is the tone of these expressions?</p><br>
+                        <p style="text-indent: 50px;"> “Go away! Can’t you see that I have very little fare for myself?” </p>
+                        <label><input type="radio" name="q85" value="A"> A. Rude </label><br>
+                        <label><input type="radio" name="q85" value="B"> B. Proud </label><br>
+                        <label><input type="radio" name="q85" value="C"> C. Naughty </label><br>
+                        <label><input type="radio" name="q85" value="D"> D. Serious </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade5()">Next</button>
+                </div>
+
+                <!-- Filipino Section for Grade 5 -->
+                <div id="filipino-section-grade-5" class="quiz-section" style="display: none;">
+                    <h2>Filipino</h2>
+                    <p> Panuto: Basahin ang mga sumusunod na tanong. Piliin ang titik ng tamang sagot.</p>
+                    <!-- Filipino Questions for Grade 5 -->
+                    <div class="quiz-question grade-5">
+                        <p>1. Si Ginoong Cruz ay isang mahusay na _____ sa aming paaralan. Alin ang tamang anyo ng pangngalang pambalana sa pangungusap na ito?</p><br>
+                        <label><input type="radio" name="q86" value="A"> A. guro </label><br>
+                        <label><input type="radio" name="q86" value="B"> B. Guro </label><br>
+                        <label><input type="radio" name="q86" value="C"> C. GURO </label><br>
+                        <label><input type="radio" name="q86" value="D"> D. guru </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 2. Siya ay nag-aral nang mabuti, _______ mataas ang kanyang marka. Ano ang tamang pangatnig na gagamitin sa pangungusap?</p><br>
+                        <label><input type="radio" name="q87" value="A"> A. at </label><br>
+                        <label><input type="radio" name="q87" value="B"> B. kaya </label><br>
+                        <label><input type="radio" name="q87" value="C"> C. ngunit </label><br>
+                        <label><input type="radio" name="q87" value="D"> D. sapagkat </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 3. Ang mga bata ay __________ ng kanilang mga guro sa kasalukuyan tungkol sa kalinisan. Alin ang tamang pandiwa sa pangungusap na ito?</p><br>
+                        <label><input type="radio" name="q88" value="A"> A. pagsabihan </label><br>
+                        <label><input type="radio" name="q88" value="B"> B. pinagsabihan </label><br>
+                        <label><input type="radio" name="q88" value="C"> C. pinagsasabihan </label><br>
+                        <label><input type="radio" name="q88" value="D"> D. pagsasabihan </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 4. Ang mga ________ ay naglalaro sa plasa. Piliin ang tamang gamit ng pangngalan sa pangungusap na ito.</p><br>
+                        <label><input type="radio" name="q89" value="A"> A. bata </label><br>
+                        <label><input type="radio" name="q89" value="B"> B. mga bata </label><br>
+                        <label><input type="radio" name="q89" value="C"> C. bata-bata </label><br>
+                        <label><input type="radio" name="q89" value="D"> D. batang </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 5. Ang kanyang mga damit ay iniwan ________ mesa. Ano ang tamang pang-ukol na gagamitin sa pangungusap na ito?</p><br>
+                        <label><input type="radio" name="q90" value="A"> A. sa </label><br>
+                        <label><input type="radio" name="q90" value="B"> B. ng </label><br>
+                        <label><input type="radio" name="q90" value="C"> C. ni </label><br>
+                        <label><input type="radio" name="q90" value="D"> D. ang </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade5()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showEnglishSectionGrade5()">Back</button>
+                </div>
+
+                <!-- Mathematics Section for Grade 5 -->
+                <div id="math-section-grade-5" class="quiz-section" style="display: none;">
+                    <h2>Mathematics</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Mathematics Questions for Grade 5 -->
+                    <div class="quiz-question grade-5">
+                        <p>1. What is the place value of 9 in 97 564?</p><br>
+                        <label><input type="radio" name="q91" value="A"> A. tens </label><br>
+                        <label><input type="radio" name="q91" value="B"> B. hundreds </label><br>
+                        <label><input type="radio" name="q91" value="C"> C. thousands </label><br>
+                        <label><input type="radio" name="q91" value="D"> D. ten thousands </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 2. How do you express 54 as a product of its prime factors?</p><br>
+                        <label><input type="radio" name="q92" value="A"> A. 3x3x3x3 </label><br>
+                        <label><input type="radio" name="q92" value="B"> B. 3x3x3x2 </label><br>
+                        <label><input type="radio" name="q92" value="C"> C. 2x2x3x3 </label><br>
+                        <label><input type="radio" name="q92" value="D"> D. 3x3x4x4 </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 3. A prime number is a number with only two factors: one and itself. How about a composite number?</p><br>
+                        <label><input type="radio" name="q93" value="A"> A. A composite number is a number with one factor. </label><br>
+                        <label><input type="radio" name="q93" value="B"> B. A composite number is a number with no factor at all. </label><br>
+                        <label><input type="radio" name="q93" value="C"> C. A composite number is a number with only two factors. </label><br>
+                        <label><input type="radio" name="q93" value="D"> D. A composite number is a number with more than two factors. </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 4. What decimal number is written as “85 hundredths?</p><br>
+                        <label><input type="radio" name="q94" value="A"> A. 0.0085 </label><br>
+                        <label><input type="radio" name="q94" value="B"> B.0.085 </label><br>
+                        <label><input type="radio" name="q94" value="C"> C. 0.85 </label><br>
+                        <label><input type="radio" name="q94" value="D"> D. 0.5 </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 5. What is the missing number in the equation? 12 + 24 + 34 = 34 + 12 + ___ </p><br>
+                        <label><input type="radio" name="q95" value="A"> A. 21 </label><br>
+                        <label><input type="radio" name="q95" value="B"> B. 22 </label><br>
+                        <label><input type="radio" name="q95" value="C"> C. 23 </label><br>
+                        <label><input type="radio" name="q95" value="D"> D. 24 </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showScienceSectionGrade5()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade5()">Back</button>
+                </div>
+
+                <!-- Science Section for Grade 5 -->
+                <div id="science-section-grade-5" class="quiz-section" style="display: none;">
+                    <h2>Science</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Science Questions for Grade 5 -->
+                    <div class="quiz-question grade-5">
+                        <p>1. How can you classify plastic cup, styrofoam, and cellophane?</p><br>
+                        <label><input type="radio" name="q96" value="A"> A. materials that decay </label><br>
+                        <label><input type="radio" name="q96" value="B"> B. materials that sink </label><br>
+                        <label><input type="radio" name="q96" value="C"> C. materials that float </label><br>
+                        <label><input type="radio" name="q96" value="D"> D. materials that absorb water </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 2. Which of the following is the function of the kidneys?</p><br>
+                        <label><input type="radio" name="q97" value="A"> A. It is where final digestion takes place. </label><br>
+                        <label><input type="radio" name="q97" value="B"> B. It is the framework of the body. </label><br>
+                        <label><input type="radio" name="q97" value="C"> C. It pumps blood to all parts of the body. </label><br>
+                        <label><input type="radio" name="q97" value="D"> D. They remove liquid wastes from the blood. </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 3. Which of the following is the function of the heart?</p><br>
+                        <label><input type="radio" name="q98" value="A"> A. It is where final digestion takes place. </label><br>
+                        <label><input type="radio" name="q98" value="B"> B. It is the framework of the body. </label><br>
+                        <label><input type="radio" name="q98" value="C"> C. It pumps blood to all parts of the body. </label><br>
+                        <label><input type="radio" name="q98" value="D"> D. They remove liquid wastes from the blood. </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 4. How does light travel?</p><br>
+                        <label><input type="radio" name="q99" value="A"> A. Light always travels in a straight line. </label><br>
+                        <label><input type="radio" name="q99" value="B"> B. Light always travels in a rectangular line. </label><br>
+                        <label><input type="radio" name="q99" value="C"> C. Light always travels in a circular line. </label><br>
+                        <label><input type="radio" name="q99" value="D"> D. Light always travels in any direction. </label><br>
+                    </div>
+                    <div class="quiz-question grade-5">
+                        <p> 5. What happens to solid materials when they are bent, pressed, hammered or cut? </p><br>
+                        <label><input type="radio" name="q100" value="A"> A. Solid materials change in color. </label><br>
+                        <label><input type="radio" name="q100" value="B"> B. Solid materials does not change. </label><br>
+                        <label><input type="radio" name="q100" value="C"> C. Solid materials change in size and shape. </label><br>
+                        <label><input type="radio" name="q100" value="D"> D. Solid materials change in odor and color. </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade5()">Back</button>
+                    <input type="submit" value="Submit">
+                </div>
+
+                <!-- English Section for Grade 6 -->
+                <div id="english-section-grade-6" class="quiz-section" style="display: none;">
+                    <h2>English</h2>
+                    <p> Test I. Analyze and identify the sound devices for each sentence. Choose the letter of the correct answer.</p>
+                    <!-- English Questions for Grade 6 -->
+                    <div class="quiz-question grade-6">
+                        <p>1. It was cold I saw polar bears wearing jackets. </p><br>
+                        <label><input type="radio" name="q101" value="A"> A. Assonance </label><br>
+                        <label><input type="radio" name="q101" value="B"> B. Hyperbole </label><br>
+                        <label><input type="radio" name="q101" value="C"> C. Personification </label><br>
+                        <label><input type="radio" name="q101" value="D"> D. Simile </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 2. The team leader moves as brave as a lion.</p><br>
+                        <label><input type="radio" name="q102" value="A"> A. Context clues </label><br>
+                        <label><input type="radio" name="q102" value="B"> B. Simile </label><br>
+                        <label><input type="radio" name="q102" value="C"> C. Personification </label><br>
+                        <label><input type="radio" name="q102" value="D"> D. Onomatopoeia </label><br>
+                    </div>
+                    <p>Test II. Read the following sentences and find the correct agreement between the subject of the sentence and its verb. Choose the letter of the correct answer.</p>
+                    <div class="quiz-question grade-6">
+                        <p> 3. Ma’am Aida Ramos (teach)_______ us how to solve mathematical equations. </p>
+                        <label><input type="radio" name="q103" value="A"> A. teachs </label><br>
+                        <label><input type="radio" name="q103" value="B"> B. teaches </label><br>
+                        <label><input type="radio" name="q103" value="C"> C. teech </label><br>
+                        <label><input type="radio" name="q103" value="D"> D. teach </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 4.Santa Rosa City (lead) _________ the STCAA competition.</p><br>
+                        <label><input type="radio" name="q104" value="A"> A. leds </label><br>
+                        <label><input type="radio" name="q104" value="B"> B. leeds </label><br>
+                        <label><input type="radio" name="q104" value="C"> C. leads </label><br>
+                        <label><input type="radio" name="q104" value="D"> D. leadses </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 5. Each student (complete) _________ the assignment on time. </p><br>
+                        <label><input type="radio" name="q105" value="A"> A. completes </label><br>
+                        <label><input type="radio" name="q105" value="B"> B. complete </label><br>
+                        <label><input type="radio" name="q105" value="C"> C. completing </label><br>
+                        <label><input type="radio" name="q105" value="D"> D. complet </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade6()">Next</button>
+                </div>
+
+                <!-- Filipino Section for Grade 6 -->
+                <div id="filipino-section-grade-6" class="quiz-section" style="display: none;">
+                    <h2>Filipino</h2>
+                    <p> I. Piliin ang angkop na panghalip sa pangungusap.</p>
+                    <!-- Filipino Questions for Grade 6 -->
+                    <div class="quiz-question grade-6">
+                        <p>1. Ate Minda, talaga bang bigay ng Nanay mo ang lapis na ______(malapit sa kausap)?</p><br>
+                        <label><input type="radio" name="q106" value="A"> A. ito </label><br>
+                        <label><input type="radio" name="q106" value="B"> B. dito </label><br>
+                        <label><input type="radio" name="q106" value="C"> C. iyan </label><br>
+                        <label><input type="radio" name="q106" value="D"> D. iyon </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 2. _______naman ang hinihintay (malapit sa nagsasalita) mong regalo mula sa Tatay mo.</p><br>
+                        <label><input type="radio" name="q107" value="A"> A. Heto </label><br>
+                        <label><input type="radio" name="q107" value="B"> B. Iyan </label><br>
+                        <label><input type="radio" name="q107" value="C"> C. Hayun </label><br>
+                        <label><input type="radio" name="q107" value="D"> D. iyon </label><br>
+                    </div>
+                    <p>II. Piliin ang tamang titik ang maging hinuha ng mga sumusunod pangyayari.</p>
+                    <div class="quiz-question grade-6">
+                        <p> 3. Patuloy ang pagtatapon ng tao ng basura sa ilog.</p><br>
+                        <label><input type="radio" name="q108" value="A"> A. Dudumi ito at mamatay lahat ang isda rito. </label><br>
+                        <label><input type="radio" name="q108" value="B"> B. Magiging malinis ang kapaligiran. </label><br>
+                        <label><input type="radio" name="q108" value="C"> C. Magiging malusog ang isda sa ilog </label><br>
+                        <label><input type="radio" name="q108" value="D"> D. Maging sariwa ang hangin ng mga taong nakatira malapit sa ilog. </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 4. Paglanghap ng makapal at maitim na usok na ibinubuga ng tambutso ng sasakyan.</p><br>
+                        <label><input type="radio" name="q109" value="A"> A. Ito ay nakapagdudulot ng kaginhawaan sa mga tao </label><br>
+                        <label><input type="radio" name="q109" value="B"> B. Maraming tao ang magkakasakit sa baga. </label><br>
+                        <label><input type="radio" name="q109" value="C"> C. Magiging maliksi ang mga tao dahil sa usok. </label><br>
+                        <label><input type="radio" name="q109" value="D"> D. Ang mga puno sa paligid ay magiging malusog. </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 5. Inani na ang mga palay. Tinuyo na ang mga ito at isinilid sa sako ng magsasaka.</p><br>
+                        <label><input type="radio" name="q110" value="A"> A. Ipagbibili ng magsasaka ang mga palay. </label><br>
+                        <label><input type="radio" name="q110" value="B"> B. Ipamimigay niya sa mga nangangailangan. </label><br>
+                        <label><input type="radio" name="q110" value="C"> C. Itatago niya ito habambuhay. </label><br>
+                        <label><input type="radio" name="q110" value="D"> D. Ipapakain niya sa mga alaga niyang hayop. </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade6()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showEnglishSectionGrade6()">Back</button>
+                </div>
+
+                <!-- Mathematics Section for Grade 6 -->
+                <div id="math-section-grade-6" class="quiz-section" style="display: none;">
+                    <h2>Mathematics</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Mathematics Questions for Grade 6 -->
+                    <div class="quiz-question grade-6">
+                        <p> 1. Find the volume of a pyramid with a rectangular base measuring 6 cm by 4 cm and height 10 cm. </p><br>
+                        <label><input type="radio" name="q111" value="A"> A. 80cm </label><br>
+                        <label><input type="radio" name="q111" value="B"> B. 80 cm³ </label><br>
+                        <label><input type="radio" name="q111" value="C"> C. 80cm² </label><br>
+                        <label><input type="radio" name="q111" value="D"> D. 80m³ </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 2. Which solid figure has polygonal base and its faces are triangles? </p><br>
+                        <label><input type="radio" name="q112" value="A"> A. Triangular prism </label><br>
+                        <label><input type="radio" name="q112" value="B"> B. Cube </label><br>
+                        <label><input type="radio" name="q112" value="C"> C. Cone </label><br>
+                        <label><input type="radio" name="q112" value="D"> D. Sphere </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 3. A ________ is a solid figure with a circular base and one vertex.</p><br>
+                        <label><input type="radio" name="q113" value="A"> A. Cylinder </label><br>
+                        <label><input type="radio" name="q113" value="B"> B. Cone </label><br>
+                        <label><input type="radio" name="q113" value="C"> C. Square pyramid </label><br>
+                        <label><input type="radio" name="q113" value="D"> D. Sphere </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 4. Which solid figure has triangular base, 6 edges, 3 triangular faces and 1 common vertex? </p><br>
+                        <label><input type="radio" name="q114" value="A"> A. Cone </label><br>
+                        <label><input type="radio" name="q114" value="B"> B. Square pyramid </label><br>
+                        <label><input type="radio" name="q114" value="C"> C. Triangular prism </label><br>
+                        <label><input type="radio" name="q114" value="D"> D. Triangular pyramid </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 5. The correct increasing order of integers of 18, -20, -30, 17, 20 is _______</p><br>
+                        <label><input type="radio" name="q115" value="A"> A. -30, -20, 17, 20, 18 </label><br>
+                        <label><input type="radio" name="q115" value="B"> B. -30, 20, 18, 17, 20 </label><br>
+                        <label><input type="radio" name="q115" value="C"> C. 20, 18, 17, -20, -30 </label><br>
+                        <label><input type="radio" name="q115" value="D"> D. -30, -20, 17, 18, 20 </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showScienceSectionGrade6()">Next</button>
+                    <button type="button" class="bnbutton" onclick="showFilipinoSectionGrade6()">Back</button>
+                </div>
+
+                <!-- Science Section for Grade 6 -->
+                <div id="science-section-grade-6" class="quiz-section" style="display: none;">
+                    <h2>Science</h2>
+                    <p> Choose the letter of the correct answer.</p>
+                    <!-- Science Questions for Grade 6 -->
+                    <div class="quiz-question grade-6">
+                        <p> 1. It is formed when substances are combined.</p><br>
+                        <label><input type="radio" name="q116" value="A"> A. Matter </label><br>
+                        <label><input type="radio" name="q116" value="B"> B. Mixture </label><br>
+                        <label><input type="radio" name="q116" value="C"> C. Solid </label><br>
+                        <label><input type="radio" name="q116" value="D"> D. Liquid</label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 2. The substance being dissolved is the _________.</p><br>
+                        <label><input type="radio" name="q117" value="A"> A. Solute </label><br>
+                        <label><input type="radio" name="q117" value="B"> B. Solvent </label><br>
+                        <label><input type="radio" name="q117" value="C"> C. Colloid </label><br>
+                        <label><input type="radio" name="q117" value="D"> D. Matter </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 3. A mixture in which particles can be distinguished is called ________.</p><br>
+                        <label><input type="radio" name="q118" value="A"> A. Solution </label><br>
+                        <label><input type="radio" name="q118" value="B"> B. Colloid </label><br>
+                        <label><input type="radio" name="q118" value="C"> C. Homogeneous mixture </label><br>
+                        <label><input type="radio" name="q118" value="D"> D. Heterogeneous mixture </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 4. In which part of the digestive system does digestion ends?</p><br>
+                        <label><input type="radio" name="q119" value="A"> A. Stomach </label><br>
+                        <label><input type="radio" name="q119" value="B"> B. Large intestine </label><br>
+                        <label><input type="radio" name="q119" value="C"> C. Small intestine </label><br>
+                        <label><input type="radio" name="q119" value="D"> D. Rectum </label><br>
+                    </div>
+                    <div class="quiz-question grade-6">
+                        <p> 5. What is the flap of tissue found at the end of the pharynx that closes over larynx to prevent the food and water from entering to the trachea? </p><br>
+                        <label><input type="radio" name="q120" value="A"> A. Cilia </label><br>
+                        <label><input type="radio" name="q120" value="B"> B. Epiglottis </label><br>
+                        <label><input type="radio" name="q120" value="C"> C. Tonsils </label><br>
+                        <label><input type="radio" name="q120" value="D"> D. Voicebox </label><br>
+                    </div>
+
+                    <button type="button" class="bnbutton" onclick="showMathSectionGrade6()">Back</button>
+                    <input type="submit" value="Submit">
+                </div>
             </div>
         </div>
     </form>
@@ -690,7 +1386,8 @@
     <p style="font-weight: bolder; font-size: 20px;" id="total-score"></p>
     <div class="popup-buttons">
         <button onclick="findTutor()">Find a Tutor</button>
-        <button onclick="retakeAssessment()">Retake Assessment</button>
+        <button id="retake-button" onclick="retakeAssessment()">Retake Assessment</button>
+
     </div>
 </div>
 <div id="overlay"></div>
@@ -705,14 +1402,30 @@
     </div>
 
     <script>
-        let englishAnswers = {};
-        let filipinoAnswers = {};
-        let mathAnswers = {};
-        let scienceAnswers = {};
+        let englishAnswersGrade1 = {};
+        let filipinoAnswersGrade1 = {};
+        let mathAnswersGrade1 = {};
+        let scienceAnswersGrade1 = {};
         let englishAnswersGrade2 = {};
         let filipinoAnswersGrade2 = {};
         let mathAnswersGrade2 = {};
         let scienceAnswersGrade2 = {};
+        let englishAnswersGrade3 = {};
+        let filipinoAnswersGrade3 = {};
+        let mathAnswersGrade3 = {};
+        let scienceAnswersGrade3 = {};
+        let englishAnswersGrade4 = {};
+        let filipinoAnswersGrade4 = {};
+        let mathAnswersGrade4 = {};
+        let scienceAnswersGrade4 = {};
+        let englishAnswersGrade5 = {};
+        let filipinoAnswersGrade5 = {};
+        let mathAnswersGrade5 = {};
+        let scienceAnswersGrade5 = {};
+        let englishAnswersGrade6 = {};
+        let filipinoAnswersGrade6 = {};
+        let mathAnswersGrade6 = {};
+        let scienceAnswersGrade6 = {};
 
         function openSidebar() {
             document.getElementById("sidebar").style.width = "250px";
@@ -730,105 +1443,154 @@ function retakeAssessment() {
     // Hide the popup and reset the form
     document.getElementById('popup').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
-    
-    // Optionally, reset the quiz form or show the first section again
-    if (gradeLevel === '1') {
-    document.getElementById('quiz-form').reset();
-    document.getElementById('english-section').style.display = 'block';
-    document.getElementById('filipino-section').style.display = 'none';
-    document.getElementById('math-section').style.display = 'none';
-    document.getElementById('science-section').style.display = 'none';
-    } else if (gradeLevel === '2') {
-        document.getElementById('quiz-form').reset();
-        document.getElementById('english-section-grade-2').style.display = 'block';
-        document.getElementById('filipino-section-grade-2').style.display = 'block';
-        document.getElementById('math-section-grade-2').style.display = 'block';
-        document.getElementById('science-section-grade-2').style.display = 'none';
 
-     }
+    // Reset the quiz form to clear all answers
+    document.getElementById('quiz-form').reset();
+
+    // Hide all sections first
+    document.getElementById('english-section-grade-1').style.display = 'none';
+    document.getElementById('filipino-section-grade-1').style.display = 'none';
+    document.getElementById('math-section-grade-1').style.display = 'none';
+    document.getElementById('science-section-grade-1').style.display = 'none';
+
+    // Now show the appropriate English section based on the grade level
+    if (gradeLevel === '1') {
+        document.getElementById('english-section-grade-1').style.display = 'block';
+    } else if (gradeLevel === '2') {
+        document.getElementById('english-section-grade-2').style.display = 'block';
+    } else if (gradeLevel === '3') {
+        document.getElementById('english-section-grade-3').style.display = 'block';
+    } else if (gradeLevel === '4') {
+        document.getElementById('english-section-grade-4').style.display = 'block';
+    } else if (gradeLevel === '5') {
+            document.getElementById('english-section-grade-5').style.display = 'block';
+    }else if (gradeLevel === '6') {
+            document.getElementById('english-section-grade-6').style.display = 'block';
+    }
+    console.log("Retake Assessment triggered. Grade Level:", gradeLevel);
 }
+
+
 
 function showQuiz() {
     const grade = document.getElementById('grade-level').value;
 
     // Hide all sections first
-    document.getElementById('english-section').style.display = 'none';
-    document.getElementById('filipino-section').style.display = 'none';
-    document.getElementById('math-section').style.display = 'none';
-    document.getElementById('science-section').style.display = 'none';
+    document.getElementById('english-section-grade-1').style.display = 'none';
+    document.getElementById('filipino-section-grade-1').style.display = 'none';
+    document.getElementById('math-section-grade-1').style.display = 'none';
+    document.getElementById('science-section-grade-1').style.display = 'none';
     document.getElementById('english-section-grade-2').style.display = 'none';
     document.getElementById('filipino-section-grade-2').style.display = 'none';
     document.getElementById('math-section-grade-2').style.display = 'none';
     document.getElementById('science-section-grade-2').style.display = 'none';
+    document.getElementById('english-section-grade-3').style.display = 'none';
+    document.getElementById('filipino-section-grade-3').style.display = 'none';
+    document.getElementById('math-section-grade-3').style.display = 'none';
+    document.getElementById('science-section-grade-3').style.display = 'none';
+    document.getElementById('english-section-grade-4').style.display = 'none';
+    document.getElementById('filipino-section-grade-4').style.display = 'none';
+    document.getElementById('math-section-grade-4').style.display = 'none';
+    document.getElementById('science-section-grade-4').style.display = 'none';
+    document.getElementById('english-section-grade-5').style.display = 'none';
+    document.getElementById('filipino-section-grade-5').style.display = 'none';
+    document.getElementById('math-section-grade-5').style.display = 'none';
+    document.getElementById('science-section-grade-5').style.display = 'none';
+    document.getElementById('english-section-grade-6').style.display = 'none';
+    document.getElementById('filipino-section-grade-6').style.display = 'none';
+    document.getElementById('math-section-grade-6').style.display = 'none';
+    document.getElementById('science-section-grade-6').style.display = 'none';
 
     // Show sections based on selected grade
     if (grade == 1) {
-        document.getElementById('english-section').style.display = 'block';
-        document.getElementById('filipino-section').style.display = 'none';
-        document.getElementById('math-section').style.display = 'none';
-        document.getElementById('science-section').style.display = 'none';
+        document.getElementById('english-section-grade-1').style.display = 'block';
+        document.getElementById('filipino-section-grade-1').style.display = 'none';
+        document.getElementById('math-section-grade-1').style.display = 'none';
+        document.getElementById('science-section-grade-1').style.display = 'none';
     } else if (grade == 2) {
         document.getElementById('english-section-grade-2').style.display = 'block';
         document.getElementById('filipino-section-grade-2').style.display = 'none';
         document.getElementById('math-section-grade-2').style.display = 'none';
         document.getElementById('science-section-grade-2').style.display = 'none';
+    } else if (grade == 3) {
+        document.getElementById('english-section-grade-3').style.display = 'block';
+        document.getElementById('filipino-section-grade-3').style.display = 'none';
+        document.getElementById('math-section-grade-3').style.display = 'none';
+        document.getElementById('science-section-grade-3').style.display = 'none';
+    } else if (grade == 4) {
+        document.getElementById('english-section-grade-4').style.display = 'block';
+        document.getElementById('filipino-section-grade-4').style.display = 'none';
+        document.getElementById('math-section-grade-4').style.display = 'none';
+        document.getElementById('science-section-grade-4').style.display = 'none';
 
-    } 
+    } else if (grade == 5) {
+        document.getElementById('english-section-grade-5').style.display = 'block';
+        document.getElementById('filipino-section-grade-5').style.display = 'none';
+        document.getElementById('math-section-grade-5').style.display = 'none';
+        document.getElementById('science-section-grade-5').style.display = 'none';
+    
+    } else if (grade == 6) {
+        document.getElementById('english-section-grade-6').style.display = 'block';
+        document.getElementById('filipino-section-grade-6').style.display = 'none';
+        document.getElementById('math-section-grade-6').style.display = 'none';
+        document.getElementById('science-section-grade-6').style.display = 'none';
+    }
+
 }
-        function showEnglishSection() {
-            saveEnglishAnswers();
-            document.getElementById('english-section').style.display = 'block';
-            document.getElementById('filipino-section').style.display = 'none';
-            document.getElementById('math-section').style.display = 'none';
-            document.getElementById('science-section').style.display = 'none';
+        function showEnglishSectionGrade1() {
+            saveEnglishAnswersGrade1();
+            document.getElementById('english-section-grade-1').style.display = 'block';
+            document.getElementById('filipino-section-grade-1').style.display = 'none';
+            document.getElementById('math-section-grade-1').style.display = 'none';
+            document.getElementById('science-section-grade-1').style.display = 'none';
         
-        document.querySelectorAll('#english-section input[type="radio"]').forEach(input => {
-                if (englishAnswers[input.name] === input.value) {
+        document.querySelectorAll('#english-section-grade-1 input[type="radio"]').forEach(input => {
+                if (englishAnswersGrade1[input.name] === input.value) {
                     input.checked = true;
                 }
             });
         }
 
-        function showFilipinoSection() {
-            saveEnglishAnswers();
-            document.getElementById('english-section').style.display = 'none';
-            document.getElementById('filipino-section').style.display = 'block';
-            document.getElementById('math-section').style.display = 'none';
-            document.getElementById('science-section').style.display = 'none';
+        function showFilipinoSectionGrade1() {
+            saveEnglishAnswersGrade1();
+            document.getElementById('english-section-grade-1').style.display = 'none';
+            document.getElementById('filipino-section-grade-1').style.display = 'block';
+            document.getElementById('math-section-grade-1').style.display = 'none';
+            document.getElementById('science-section-grade-1').style.display = 'none';
 
 
             // Restore Filipino answers
-            document.querySelectorAll('#filipino-section input[type="radio"]').forEach(input => {
-                if (filipinoAnswers[input.name] === input.value) {
+            document.querySelectorAll('#filipino-section-grade-1 input[type="radio"]').forEach(input => {
+                if (filipinoAnswersGrade1[input.name] === input.value) {
                     input.checked = true;
                 }
             });
         }
 
-        function showMathSection() {
-            saveFilipinoAnswers();
-            document.getElementById('english-section').style.display = 'none';
-            document.getElementById('filipino-section').style.display = 'none';
-            document.getElementById('math-section').style.display = 'block';
-            document.getElementById('science-section').style.display = 'none';
+        function showMathSectionGrade1() {
+            saveFilipinoAnswersGrade1();
+            document.getElementById('english-section-grade-1').style.display = 'none';
+            document.getElementById('filipino-section-grade-1').style.display = 'none';
+            document.getElementById('math-section-grade-1').style.display = 'block';
+            document.getElementById('science-section-grade-1').style.display = 'none';
 
             // Restore Math answers for Grade 1
-            document.querySelectorAll('#math-section input[type="radio"]').forEach(input => {
-                if (mathAnswers[input.name] === input.value) {
+            document.querySelectorAll('#math-section-grade-1 input[type="radio"]').forEach(input => {
+                if (mathAnswersGrade1[input.name] === input.value) {
                     input.checked = true;
                 }
             });
         }
 
-        function showScienceSection() {
-            saveMathAnswers();
-            document.getElementById('english-section').style.display = 'none';
-            document.getElementById('filipino-section').style.display = 'none';
-            document.getElementById('math-section').style.display = 'none';
-            document.getElementById('science-section').style.display = 'block';
+        function showScienceSectionGrade1() {
+            saveMathAnswersGrade1();
+            document.getElementById('english-section-grade-1').style.display = 'none';
+            document.getElementById('filipino-section-grade-1').style.display = 'none';
+            document.getElementById('math-section-grade-1').style.display = 'none';
+            document.getElementById('science-section-grade-1').style.display = 'block';
             // Restore Math answers for Grade 1
-            document.querySelectorAll('#science-section input[type="text"]').forEach(input => {
-                if (scienceAnswers[input.name] === input.value) {
+            document.querySelectorAll('#science-section-grade-1 input[type="text"]').forEach(input => {
+                if (scienceAnswersGrade1[input.name] === input.value) {
                     input.checked = true;
                 }
             });
@@ -886,7 +1648,7 @@ function showQuiz() {
             document.getElementById('math-section-grade-2').style.display = 'none';
             document.getElementById('science-section-grade-2').style.display = 'block';
 
-            // Restore Math answers for Grade 2
+            // Restore Science answers for Grade 2
             document.querySelectorAll('#science-section-grade-2 input[type="radio"]').forEach(input => {
                 if (scienceAnswersGrade2[input.name] === input.value) {
                     input.checked = true;
@@ -894,33 +1656,280 @@ function showQuiz() {
             });
         }
 
-        function saveEnglishAnswers() {
-            document.querySelectorAll('#english-section input[type="radio"]:checked').forEach(q => {
-                englishAnswers[q.name] = q.value;
+        function showEnglishSectionGrade3() {
+            saveEnglishAnswersGrade3();
+            document.getElementById('english-section-grade-3').style.display = 'block';
+            document.getElementById('filipino-section-grade-3').style.display = 'none';
+            document.getElementById('math-section-grade-3').style.display = 'none';
+            document.getElementById('science-section-grade-3').style.display = 'none';
+
+            // Restore English answers for Grade 3
+            document.querySelectorAll('#english-section-grade-3 input[type="text"]').forEach(input => {
+                if (englishAnswersGrade3[input.name] === input.value) {
+                    input.checked = true;
+                }
             });
         }
 
-        function saveFilipinoAnswers() {
-            document.querySelectorAll('#filipino-section input[type="radio"]:checked').forEach(q => {
-                filipinoAnswers[q.name] = q.value;
+        function showFilipinoSectionGrade3() {
+            saveEnglishAnswersGrade3();
+            document.getElementById('english-section-grade-3').style.display = 'none';
+            document.getElementById('filipino-section-grade-3').style.display = 'block';
+            document.getElementById('math-section-grade-3').style.display = 'none';
+            document.getElementById('science-section-grade-3').style.display = 'none';
+
+            // Restore Filipino answers for Grade 3
+            document.querySelectorAll('#filipino-section-grade-3 input[type="radio"]').forEach(input => {
+                if (filipinoAnswersGrade3[input.name] === input.value) {
+                    input.checked = true;
+                }
             });
         }
 
-        function saveMathAnswers() {
-            document.querySelectorAll('#math-section input[type="radio"]:checked').forEach(q => {
-                mathAnswers[q.name] = q.value;
+        function showMathSectionGrade3() {
+            saveFilipinoAnswersGrade3();
+            document.getElementById('english-section-grade-3').style.display = 'none';
+            document.getElementById('filipino-section-grade-3').style.display = 'none';
+            document.getElementById('math-section-grade-3').style.display = 'block';
+            document.getElementById('science-section-grade-3').style.display = 'none';
+
+            // Restore Math answers for Grade 3
+            document.querySelectorAll('#math-section-grade-3 input[type="radio"]').forEach(input => {
+                if (mathAnswersGrade3[input.name] === input.value) {
+                    input.checked = true;
+                }
             });
         }
 
-        function saveScienceAnswers() {
-            document.querySelectorAll('#science-section input[type="text"]').forEach(q => {
-                scienceAnswers[q.name] = q.value.trim(); // Save the entered value
+        function showScienceSectionGrade3() {
+            saveMathAnswersGrade3();
+            document.getElementById('english-section-grade-3').style.display = 'none';
+            document.getElementById('filipino-section-grade-3').style.display = 'none';
+            document.getElementById('math-section-grade-3').style.display = 'none';
+            document.getElementById('science-section-grade-3').style.display = 'block';
+
+            // Restore Science answers for Grade 3
+            document.querySelectorAll('#science-section-grade-3 input[type="text"]').forEach(input => {
+                if (scienceAnswersGrade3[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showEnglishSectionGrade4() {
+            saveEnglishAnswersGrade4();
+            document.getElementById('english-section-grade-4').style.display = 'block';
+            document.getElementById('filipino-section-grade-4').style.display = 'none';
+            document.getElementById('math-section-grade-4').style.display = 'none';
+            document.getElementById('science-section-grade-4').style.display = 'none';
+
+            // Restore English answers for Grade 4
+            document.querySelectorAll('#english-section-grade-4 input[type="radio"]').forEach(input => {
+                if (englishAnswersGrade4[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showFilipinoSectionGrade4() {
+            saveEnglishAnswersGrade4();
+            document.getElementById('english-section-grade-4').style.display = 'none';
+            document.getElementById('filipino-section-grade-4').style.display = 'block';
+            document.getElementById('math-section-grade-4').style.display = 'none';
+            document.getElementById('science-section-grade-4').style.display = 'none';
+
+            // Restore Filipino answers for Grade 4
+            document.querySelectorAll('#filipino-section-grade-4 input[type="radio"]').forEach(input => {
+                if (filipinoAnswersGrade4[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showMathSectionGrade4() {
+            saveFilipinoAnswersGrade4();
+            document.getElementById('english-section-grade-4').style.display = 'none';
+            document.getElementById('filipino-section-grade-4').style.display = 'none';
+            document.getElementById('math-section-grade-4').style.display = 'block';
+            document.getElementById('science-section-grade-4').style.display = 'none';
+
+            // Restore Math answers for Grade 4
+            document.querySelectorAll('#math-section-grade-4 input[type="radio"]').forEach(input => {
+                if (mathAnswersGrade4[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showScienceSectionGrade4() {
+            saveMathAnswersGrade4();
+            document.getElementById('english-section-grade-4').style.display = 'none';
+            document.getElementById('filipino-section-grade-4').style.display = 'none';
+            document.getElementById('math-section-grade-4').style.display = 'none';
+            document.getElementById('science-section-grade-4').style.display = 'block';
+
+            // Restore Science answers for Grade 4
+            document.querySelectorAll('#science-section-grade-4 input[type="radio"]').forEach(input => {
+                if (scienceAnswersGrade4[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showEnglishSectionGrade5() {
+            saveEnglishAnswersGrade5();
+            document.getElementById('english-section-grade-5').style.display = 'block';
+            document.getElementById('filipino-section-grade-5').style.display = 'none';
+            document.getElementById('math-section-grade-5').style.display = 'none';
+            document.getElementById('science-section-grade-5').style.display = 'none';
+
+            // Restore English answers for Grade 5
+            document.querySelectorAll('#english-section-grade-5 input[type="text"]').forEach(q => {
+                if (englishAnswersGrade5[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+           
+            document.querySelectorAll('#english-section-grade-5 input[type="radio"]').forEach(input => {
+                if (englishAnswersGrade4[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showFilipinoSectionGrade5() {
+            saveEnglishAnswersGrade5();
+            document.getElementById('english-section-grade-5').style.display = 'none';
+            document.getElementById('filipino-section-grade-5').style.display = 'block';
+            document.getElementById('math-section-grade-5').style.display = 'none';
+            document.getElementById('science-section-grade-5').style.display = 'none';
+
+            // Restore Filipino answers for Grade 5
+            document.querySelectorAll('#filipino-section-grade-5 input[type="radio"]').forEach(input => {
+                if (filipinoAnswersGrade5[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showMathSectionGrade5() {
+            saveFilipinoAnswersGrade5();
+            document.getElementById('english-section-grade-5').style.display = 'none';
+            document.getElementById('filipino-section-grade-5').style.display = 'none';
+            document.getElementById('math-section-grade-5').style.display = 'block';
+            document.getElementById('science-section-grade-5').style.display = 'none';
+
+            // Restore Math answers for Grade 5
+            document.querySelectorAll('#math-section-grade-5 input[type="radio"]').forEach(input => {
+                if (mathAnswersGrade5[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showScienceSectionGrade5() {
+            saveMathAnswersGrade5();
+            document.getElementById('english-section-grade-5').style.display = 'none';
+            document.getElementById('filipino-section-grade-5').style.display = 'none';
+            document.getElementById('math-section-grade-5').style.display = 'none';
+            document.getElementById('science-section-grade-5').style.display = 'block';
+
+            // Restore Science answers for Grade 5
+            document.querySelectorAll('#science-section-grade-5 input[type="radio"]').forEach(input => {
+                if (scienceAnswersGrade5[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showEnglishSectionGrade6() {
+            saveEnglishAnswersGrade6();
+            document.getElementById('english-section-grade-6').style.display = 'block';
+            document.getElementById('filipino-section-grade-6').style.display = 'none';
+            document.getElementById('math-section-grade-6').style.display = 'none';
+            document.getElementById('science-section-grade-6').style.display = 'none';
+
+            // Restore English answers for Grade 6
+            document.querySelectorAll('#english-section-grade-6 input[type="radio"]').forEach(input => {
+                if (englishAnswersGrade6[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showFilipinoSectionGrade6() {
+            saveEnglishAnswersGrade6();
+            document.getElementById('english-section-grade-6').style.display = 'none';
+            document.getElementById('filipino-section-grade-6').style.display = 'block';
+            document.getElementById('math-section-grade-6').style.display = 'none';
+            document.getElementById('science-section-grade-6').style.display = 'none';
+
+            // Restore Filipino answers for Grade 6
+            document.querySelectorAll('#filipino-section-grade-6 input[type="radio"]').forEach(input => {
+                if (filipinoAnswersGrade6[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showMathSectionGrade6() {
+            saveFilipinoAnswersGrade6();
+            document.getElementById('english-section-grade-6').style.display = 'none';
+            document.getElementById('filipino-section-grade-6').style.display = 'none';
+            document.getElementById('math-section-grade-6').style.display = 'block';
+            document.getElementById('science-section-grade-6').style.display = 'none';
+
+            // Restore Math answers for Grade 6
+            document.querySelectorAll('#math-section-grade-6 input[type="radio"]').forEach(input => {
+                if (mathAnswersGrade6[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        function showScienceSectionGrade6() {
+            saveMathAnswersGrade6();
+            document.getElementById('english-section-grade-6').style.display = 'none';
+            document.getElementById('filipino-section-grade-6').style.display = 'none';
+            document.getElementById('math-section-grade-6').style.display = 'none';
+            document.getElementById('science-section-grade-6').style.display = 'block';
+
+            // Restore Science answers for Grade 6
+            document.querySelectorAll('#science-section-grade-6 input[type="radio"]').forEach(input => {
+                if (scienceAnswersGrade6[input.name] === input.value) {
+                    input.checked = true;
+                }
+            });
+        }
+
+        // Save answers 
+        function saveEnglishAnswersGrade1() {
+            document.querySelectorAll('#english-section-grade-1 input[type="radio"]:checked').forEach(q => {
+                englishAnswersGrade1[q.name] = q.value;
+            });
+        }
+
+        function saveFilipinoAnswersGrade1() {
+            document.querySelectorAll('#filipino-section-grade-1 input[type="radio"]:checked').forEach(q => {
+                filipinoAnswersGrade1[q.name] = q.value;
+            });
+        }
+
+        function saveMathAnswersGrade1() {
+            document.querySelectorAll('#math-section-grade-1 input[type="radio"]:checked').forEach(q => {
+                mathAnswersGrade1[q.name] = q.value;
+            });
+        }
+
+        function saveScienceAnswersGrade1() {
+            document.querySelectorAll('#science-section-grade-1 input[type="text"]').forEach(q => {
+                scienceAnswersGrade1[q.name] = q.value.trim(); // Save the entered value
             });
         }
 
         function saveEnglishAnswersGrade2() {
             document.querySelectorAll('#english-section-grade-2 input[type="text"]:checked').forEach(q => {
-                englishAnswersGrade2[q.name] = q.value;
+                englishAnswersGrade2[q.name] = q.value.trim();
             });
         }
 
@@ -942,8 +1951,111 @@ function showQuiz() {
             });
         }
 
+        function saveEnglishAnswersGrade3() {
+            document.querySelectorAll('#english-section-grade-3 input[type="text"]:checked').forEach(q => {
+                englishAnswersGrade3[q.name] = q.value.trim();
+            });
+        }
 
-        function checkAnswers(event) {
+        function saveFilipinoAnswersGrade3() {
+            document.querySelectorAll('#filipino-section-grade-3 input[type="radio"]:checked').forEach(q => {
+                filipinoAnswersGrade3[q.name] = q.value;
+            });
+        }
+
+        function saveMathAnswersGrade3() {
+            document.querySelectorAll('#math-section-grade-3 input[type="radio"]:checked').forEach(q => {
+                mathAnswersGrade3[q.name] = q.value;
+            });
+        }
+
+        function saveScienceAnswersGrade3() {
+            document.querySelectorAll('#science-section-grade-3 input[type="text"]:checked').forEach(q => {
+                scienceAnswersGrade3[q.name] = q.value.trim();
+            });
+        }
+
+        function saveEnglishAnswersGrade4() {
+            document.querySelectorAll('#english-section-grade-4 input[type="radio"]:checked').forEach(q => {
+                englishAnswersGrade4[q.name] = q.value;
+            });
+        }
+
+        function saveFilipinoAnswersGrade4() {
+            document.querySelectorAll('#filipino-section-grade-4 input[type="radio"]:checked').forEach(q => {
+                filipinoAnswersGrade4[q.name] = q.value;
+            });
+        }
+
+        function saveMathAnswersGrade4() {
+            document.querySelectorAll('#math-section-grade-4 input[type="radio"]:checked').forEach(q => {
+                mathAnswersGrade4[q.name] = q.value;
+            });
+        }
+
+        function saveScienceAnswersGrade4() {
+            document.querySelectorAll('#science-section-grade-3 input[type="radio"]:checked').forEach(q => {
+                scienceAnswersGrade4[q.name] = q.value;
+            });
+        }
+
+        function saveEnglishAnswersGrade5() {
+            const englishAnswersGrade5 = {};
+            
+            // Save text input answers
+            document.querySelectorAll('#english-section-grade-5 input[type="text"]').forEach(q => {
+            englishAnswersGrade5[q.name] = q.value;
+            });
+
+            // Save radio button answers
+            document.querySelectorAll('#english-section-grade-5 input[type="radio"]:checked').forEach(q => {
+            englishAnswersGrade5[q.name] = q.value;
+            });
+        }
+
+        function saveFilipinoAnswersGrade5() {
+            document.querySelectorAll('#filipino-section-grade-5 input[type="radio"]:checked').forEach(q => {
+                filipinoAnswersGrade5[q.name] = q.value;
+            });
+        }
+
+        function saveMathAnswersGrade5() {
+            document.querySelectorAll('#math-section-grade-5 input[type="radio"]:checked').forEach(q => {
+                mathAnswersGrade5[q.name] = q.value;
+            });
+        }
+
+        function saveScienceAnswersGrade5() {
+            document.querySelectorAll('#science-section-grade-5 input[type="radio"]:checked').forEach(q => {
+                scienceAnswersGrade5[q.name] = q.value;
+            });
+        }
+
+        function saveEnglishAnswersGrade6() {
+            document.querySelectorAll('#english-section-grade-6 input[type="radio"]:checked').forEach(q => {
+                englishAnswersGrade6[q.name] = q.value;
+            });
+        }
+
+        function saveFilipinoAnswersGrade6() {
+            document.querySelectorAll('#filipino-section-grade-6 input[type="radio"]:checked').forEach(q => {
+                filipinoAnswersGrade6[q.name] = q.value;
+            });
+        }
+
+        function saveMathAnswersGrade6() {
+            document.querySelectorAll('#math-section-grade-6 input[type="radio"]:checked').forEach(q => {
+                mathAnswersGrade6[q.name] = q.value;
+            });
+        }
+
+        function saveScienceAnswersGrade6() {
+            document.querySelectorAll('#science-section-grade-6 input[type="radio"]:checked').forEach(q => {
+                scienceAnswersGrade6[q.name] = q.value;
+            });
+        }
+        
+    function checkAnswers(event) {
     event.preventDefault();
 
     const grade = document.getElementById('grade-level').value;
@@ -968,7 +2080,40 @@ function showQuiz() {
             q36: 'C', q37: 'B', q38: 'B', q39: 'B', q40: 'B' // Science
         };
         totalQuestions = 20; // Total questions for Grade 2
+    } else if (grade == 3) {
+        answers = {
+            q41: 'excited', q42: 'friends', q43: 'backyard', q44: 'notebook', q45: 'chocolate', // English
+            q46: 'A', q47: 'A', q48: 'A', q49: 'B', q50: 'C', // Filipino
+            q51: 'A', q52: 'D', q53: 'B', q54: 'B', q55: 'C', // Math
+            q56: 'scratching', q57: 'breathe', q58: 'swam', q59: 'flying', q60: 'hopped' // Science
+        };
+        totalQuestions = 20; // Total questions for Grade 3
+    } else if (grade == 4) {
+        answers = {
+            q61: 'B', q62: 'B', q63: 'D', q64: 'A', q65: 'B', // English
+            q66: 'A', q67: 'B', q68: 'C', q69: 'A', q70: 'C', // Filipino
+            q71: 'A', q72: 'C', q73: 'A', q74: 'A', q75: 'C', // Math
+            q76: 'A', q77: 'A', q78: 'B', q79: 'D', q80: 'C' // Science
+        };
+        totalQuestions = 20; // Total questions for Grade 4
+    } else if (grade == 5) {
+        answers = {
+            q81: 'C', q82: 'C', q83: 'A', q84: 'B', q85: 'A', // English
+            q86: 'A', q87: 'B', q88: 'C', q89: 'A', q90: 'A', // Filipino
+            q91: 'D', q92: 'C', q93: 'C', q94: 'A', q95: 'B', // Math
+            q96: 'C', q97: 'D', q98: 'C', q99: 'A', q100: 'C' // Science
+        };
+        totalQuestions = 20; // Total questions for Grade 5
+    }else if (grade == 6) {
+        answers = {
+            q101: 'B', q102: 'B', q103: 'B', q104: 'C', q105: 'A', // English
+            q106: 'C', q107: 'A', q108: 'A', q109: 'B', q110: 'A', // Filipino
+            q111: 'A', q112: 'A', q113: 'C', q114: 'B', q115: 'A', // Math
+            q116: 'B', q117: 'A', q118: 'D', q119: 'C', q120: 'B' // Science
+        };
+        totalQuestions = 20; // Total questions for Grade 5
     }
+
 
     // Loop through the answers
     for (let q in answers) {
@@ -983,10 +2128,28 @@ function showQuiz() {
                     else if (q >= 'q6' && q <= 'q10') filipinoScore++;
                     else if (q >= 'q11' && q <= 'q15') mathScore++;
                 } else if (grade == 2) {
-                    if (q >= 'q21' && q <= 'q25') englishScore++;
-                    else if (q >= 'q26' && q <= 'q30') filipinoScore++;
+                    if (q >= 'q26' && q <= 'q30') filipinoScore++;
                     else if (q >= 'q31' && q <= 'q35') mathScore++;
                     else if (q >= 'q36' && q <= 'q40') scienceScore++;
+                } else if (grade == 3) {
+                    if (q >= 'q46' && q <= 'q50') filipinoScore++;
+                    else if (q >= 'q51' && q <= 'q55') mathScore++;
+                    else if (q >= 'q56' && q <= 'q60') scienceScore++;
+                } else if (grade == 4) {
+                    if (q >= 'q61' && q <= 'q65') englishScore++;
+                    else if (q >= 'q66' && q <= 'q70') filipinoScore++;
+                    else if (q >= 'q71' && q <= 'q75') mathScore++;
+                    else if (q >= 'q76' && q <= 'q80') scienceScore++;
+                } else if (grade == 5) {
+                    if (q >= 'q83' && q <= 'q85') englishScore++;
+                    else if (q >= 'q86' && q <= 'q90') filipinoScore++;
+                    else if (q >= 'q91' && q <= 'q95') mathScore++;
+                    else if (q >= 'q96' && q <= 'q100') scienceScore++;
+                } else if (grade == 6) {
+                    if (q >= 'q101' && q <= 'q105') englishScore++;
+                    else if (q >= 'q106' && q <= 'q110') filipinoScore++;
+                    else if (q >= 'q111' && q <= 'q115') mathScore++;
+                    else if (q >= 'q116' && q <= 'q120') scienceScore++;
                 }
             }
         }
@@ -995,6 +2158,9 @@ function showQuiz() {
         if (input && input.type === 'text' && input.value.trim().toLowerCase() === answers[q].toLowerCase()) {
             if (grade == 1 && q >= 'q16' && q <= 'q20') scienceScore++;
             else if (grade == 2 && q >= 'q21' && q <= 'q25') englishScore++;
+            else if (grade == 3 && q >= 'q41' && q <= 'q45') englishScore++;
+            else if (grade == 3 && q >= 'q56' && q <= 'q60') scienceScore++;
+            else if (grade == 5 && q >= 'q81' && q <= 'q82') englishScore++;
         }
     }
 

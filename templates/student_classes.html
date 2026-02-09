@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -190,7 +191,7 @@
             margin-top: 10px; /* Margin above control buttons */
         }
         .controls button {
-            padding: 10px 15px; /* Padding for buttons */
+            padding: 10px; /* Padding for buttons */
             margin: 5px; /* Margin for spacing */
             font-size: 16px; /* Font size */
             cursor: pointer; /* Pointer cursor */
@@ -255,59 +256,73 @@
     <div id="meetingModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeMeetingModal()">&times;</span>
-            <h2>Meeting Room</h2>
-            <video id="videoElement" autoplay muted></video>
+            <h3>Meeting Room</h3>
+            <video id="localVideo" autoplay muted></video>
             <div class="controls">
-                <button onclick="toggleAudio()">OFF Audio</button>
-                <button onclick="toggleVideo()">OFF Video</button>
+                <button onclick="toggleAudio()"><i id="audioIcon" class="fas fa-microphone"></i></button>
+                <button onclick="toggleVideo()"><i id="videoIcon" class="fas fa-video"></i></button>
             </div>
-            <script>
-                let videoStream;
-const videoElement = document.getElementById('videoElement');
-const audioEnabled = {value: true};
-const videoEnabled = {value: true};
-
-async function openMeetingModal(meetingId) {
-    document.getElementById("meetingModal").style.display = "block";
-    // Start the video stream
-    videoStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-    videoElement.srcObject = videoStream;
-
-    // Initialize a WebRTC connection or use a service like PeerJS
-    joinMeetingRoom(meetingId);
-}
-
-function closeMeetingModal() {
-    document.getElementById("meetingModal").style.display = "none";
-    // Stop the video stream
-    if (videoStream) {
-        videoStream.getTracks().forEach(track => track.stop());
-    }
-}
-
-function toggleAudio() {
-    audioEnabled.value = !audioEnabled.value;
-    videoStream.getAudioTracks().forEach(track => {
-        track.enabled = audioEnabled.value;
-    });
-}
-
-function toggleVideo() {
-    videoEnabled.value = !videoEnabled.value;
-    videoStream.getVideoTracks().forEach(track => {
-        track.enabled = videoEnabled.value;
-    });
-}
-
-async function joinMeetingRoom(meetingId) {
-    // Example using WebRTC or any preferred service
-    // Replace this with actual logic to connect to the same meeting room using the meetingId
-    console.log("Joining meeting room with ID:", meetingId);
-    // Here, you would establish a connection using WebRTC, PeerJS, or a signaling server.
-}
-
-            </script>
         </div>
     </div>
+
+    <script>
+        let audioEnabled = { value: true };
+        let videoEnabled = { value: true };
+        let videoStream;
+
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px"; // Open sidebar
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0"; // Close sidebar
+        }
+
+        function openMeetingModal(meetingId) {
+            document.getElementById("meetingModal").style.display = "block"; // Show modal
+            startVideo(meetingId); // Start video
+        }
+
+        function closeMeetingModal() {
+            document.getElementById("meetingModal").style.display = "none"; // Hide modal
+            stopVideo(); // Stop video
+        }
+
+        function startVideo(meetingId) {
+            // Replace this with your video initialization logic
+            navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+                .then(stream => {
+                    videoStream = stream;
+                    document.getElementById("localVideo").srcObject = stream;
+                })
+                .catch(error => {
+                    console.error("Error accessing media devices.", error);
+                });
+        }
+
+        function stopVideo() {
+            if (videoStream) {
+                videoStream.getTracks().forEach(track => track.stop()); // Stop all tracks
+            }
+        }
+
+        function toggleAudio() {
+            audioEnabled.value = !audioEnabled.value;
+            videoStream.getAudioTracks().forEach(track => {
+                track.enabled = audioEnabled.value;
+            });
+            const audioIcon = document.getElementById('audioIcon');
+            audioIcon.className = audioEnabled.value ? 'fas fa-microphone' : 'fas fa-microphone-slash';
+        }
+
+        function toggleVideo() {
+            videoEnabled.value = !videoEnabled.value;
+            videoStream.getVideoTracks().forEach(track => {
+                track.enabled = videoEnabled.value;
+            });
+            const videoIcon = document.getElementById('videoIcon');
+            videoIcon.className = videoEnabled.value ? 'fas fa-video' : 'fas fa-video-slash';
+        }
+    </script>
 </body>
 </html>
